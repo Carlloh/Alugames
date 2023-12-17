@@ -5,11 +5,12 @@ function alterarStatus(id) {
     let nomeJogo = gameClicado.querySelector('.dashboard__item__name');
 
     if(imagem.classList.contains('dashboard__item__img--rented')) {
+        if(confirm(`Você tem certeza que deseja devolver o jogo ${nomeJogo.textContent}?`)) {
         imagem.classList.remove('dashboard__item__img--rented');
         botao.classList.remove('dashboard__item__button--return');
         botao.textContent = 'Alugar';
         alert(`Dirija-se ao balcão para finalizar a devolução, Sr./Sra. ${nomeUsuario}. Obrigado e até a próxima!`)
-
+        }
     } else {
         imagem.classList.add('dashboard__item__img--rented');
         botao.textContent = 'Devolver';
